@@ -25,20 +25,25 @@
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    padding: 10px;
-    height: 30px;
+    height: auto;
     width: auto;
     font-family: 'SF Pro', sans-serif;
     font-style: "regular";
 }
 
 .primary{
+    padding: 10px;
     color: white;
     background-color: #007AFF;
 }
 .secondary{
+    padding: 10px;
     color: black;
     background-color: white;
+}
+.dock{ 
+    background: none;
+    margin: 0 5px;
 }
 .marginLeft{
     margin-left: 10px;

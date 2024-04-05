@@ -6,12 +6,14 @@ const buttonVariants = cva(style.base, {
   variants: {
     button: {
       primary: style.primary,
-      secondary: style.secundary
+      secondary: style.secundary,
+      dock: style.dock
+
     },
     separation: {
       left: style.marginLeft,
       rigth: style.marginRigth
-      
+
     }
   }
 })
@@ -22,13 +24,14 @@ interface buttonProps extends VariantProps<typeof buttonVariants> {
   text?: string
 }
 
-export function ButtonAppleSystem({ onClick, text, button, separation }: buttonProps) {
+export function ButtonAppleSystem({ onClick, icon, text, button, separation }: buttonProps) {
   return (
     <button
       onClick={onClick}
-      className={buttonVariants({button, separation})}
+      className={buttonVariants({ button, separation })}
     >
-      {text}
+      {(icon) && <IconAppleSystem width={55} path={icon} />}
+      {(text) && text}
     </button>
   )
 }
