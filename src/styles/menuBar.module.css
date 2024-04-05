@@ -1,0 +1,59 @@
+.menuBar {
+    padding: 0 15px;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 10;
+    display: flex;
+    height: 30px;
+    width: 100%;
+    background-color: rgb(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.menuBar > *{
+    width: 50%;
+    height: 100%;
+}
+
+.menuBar > :first-child{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.menuBar > :last-child{
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.listNav{
+    list-style: none;
+    display: flex;
+}
+
+.listNav>*{
+    cursor: default;
+    color: black;
+    font-family: 'SF Pro', sans-serif;
+    font-style: "regular";
+    font-weight: bolder;
+    margin-left: 22px;
+}
+
+.iconBar{
+    list-style: none;
+    display: flex;
+}
+
+.iconBar>*{
+    cursor: default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 22px;
+}
+
+

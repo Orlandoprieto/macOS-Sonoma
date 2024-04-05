@@ -1,0 +1,39 @@
+.column{
+    flex-direction: column;
+
+}
+
+.base{
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.containerAvatar {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    min-height: 60px;
+    min-width: 60px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+}
+
+.nameUser{
+    text-align: left;
+    pointer-events: none;
+    margin: 0;
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 1rem;
+    color: white;
+    font-family: 'SF Pro', sans-serif;
+    font-style: "regular";
+}

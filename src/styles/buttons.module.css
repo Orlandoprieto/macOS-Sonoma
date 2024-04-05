@@ -1,0 +1,49 @@
+.login {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+}
+
+.buttonFolder{
+    border: none;
+    background: none;
+    display: flex;
+    width: auto;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.base{
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    padding: 10px;
+    height: 30px;
+    width: auto;
+    font-family: 'SF Pro', sans-serif;
+    font-style: "regular";
+}
+
+.primary{
+    color: white;
+    background-color: #007AFF;
+}
+.secondary{
+    color: black;
+    background-color: white;
+}
+.marginLeft{
+    margin-left: 10px;
+}
+.marginRigth{
+    margin-right: 10px;
+}
+
