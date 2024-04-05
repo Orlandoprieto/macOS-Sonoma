@@ -1,6 +1,7 @@
 import style from "@/styles/menuBar.module.css"
 import { IconAppleSystem } from "@/components/icons"
 import { navApple, iconsBar } from "../../utils/const"
+
 export default function MenuBar() {
   return (
     <div className={style.menuBar}>

@@ -8,7 +8,7 @@ export default function Video() {
       objectFit: 'cover',
       zIndex: "-1"
     }}
-    src="/vid/2888383-uhd_3840_2160_24fps.mp4"
+    src="/vid/10411422-uhd_3840_2160_30fps.mp4"
     autoPlay
     loop
   />
