@@ -3,12 +3,12 @@
 import React, { forwardRef, useState } from "react";
 import style from "@/styles/input.module.css";
 import { LoginButton } from "@/components/ui/Buttons";
+import { useFormContext } from "react-hook-form"
 
 interface InputProps {
-  typeInput: "text" | "password";
+  typeInput: "text" | "password" | "submit";
   placeholder?: string;
   logIn?: () => void;
-  label?: string
 }
 
 export const LoginInput = forwardRef<HTMLInputElement, InputProps>(
@@ -35,18 +35,24 @@ export const LoginInput = forwardRef<HTMLInputElement, InputProps>(
 );
 
 
-export const TextFields = forwardRef<HTMLInputElement, InputProps>(
-  ({ label, typeInput }: InputProps, ref) => {
-    return (
-      <div className={style.textFields}>
-        {(label) && (
-          <label htmlFor="">{label}:</label>
-        )}
+interface TextFieldsProps extends InputProps{
+  label: string,
+  field: string
+}
 
-        <input ref={ref} type={typeInput} />
-      </div>
-    )
-  })
+export const TextFields = ({ field, typeInput, label }: TextFieldsProps) => {
+  const { register } = useFormContext()
+
+  return (
+    <div className={style.textFields}>
+      <label htmlFor="">{label}:</label>
+      <input
+        type={typeInput}
+        {...register(field)}
+      />
+    </div>
+  )
+}
 
 
 

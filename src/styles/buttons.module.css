@@ -9,7 +9,7 @@
     background: none;
 }
 
-.buttonFolder{
+.buttonFolder {
     border: none;
     background: none;
     display: flex;
@@ -19,36 +19,43 @@
     align-items: center;
 }
 
-.base{
+.base {
     border: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
+    border-radius: 8px;
     height: auto;
     width: auto;
     font-family: 'SF Pro', sans-serif;
     font-style: "regular";
 }
 
-.primary{
-    padding: 10px;
+.primary {
+    padding: 8px 10px;
     color: white;
     background-color: #007AFF;
 }
-.secondary{
-    padding: 10px;
+
+.secondary {
+    padding: 8px 10px;
     color: black;
     background-color: white;
+    border: 1px solid rgb(0, 0, 0, 0.1);
 }
-.dock{ 
+
+.dock {
+    height: 55px;
+    width: 55px;
     background: none;
     margin: 0 3px;
 }
-.marginLeft{
+
+.marginLeft {
+
     margin-left: 10px;
 }
-.marginRigth{
+
+.marginRigth {
     margin-right: 10px;
 }
-

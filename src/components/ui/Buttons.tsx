@@ -6,7 +6,7 @@ const buttonVariants = cva(style.base, {
   variants: {
     button: {
       primary: style.primary,
-      secondary: style.secundary,
+      secondary: style.secondary,
       dock: style.dock
 
     },
@@ -22,11 +22,14 @@ interface buttonProps extends VariantProps<typeof buttonVariants> {
   onClick?: () => void
   icon?: string
   text?: string
+  type?: "submit"
+  
 }
 
-export function ButtonAppleSystem({ onClick, icon, text, button, separation }: buttonProps) {
+export function ButtonAppleSystem({type ,onClick, icon, text, button, separation }: buttonProps) {
   return (
     <button
+      type={type}
       onClick={onClick}
       className={buttonVariants({ button, separation })}
     >

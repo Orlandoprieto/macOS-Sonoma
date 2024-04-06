@@ -8,44 +8,37 @@ import animejs from "animejs"
 
 interface FolderProps {
   children: React.ReactNode
+  onclick: () => void
 }
 
-export default function Folder({ children }: FolderProps) {
+export default function Folder({ children, onclick }: FolderProps) {
   const folderRef = useRef(null)
 
-  const [showForder, setShowFolder] = useState<boolean>(false)
   const [resize, setResize] = useState<boolean | null>(null)
-
-  const handlerShowFolder = () => {
-    setShowFolder(true)
-  }
 
   const handlerResize = () => {
     setResize(!resize)
   }
 
-  const handlerHiddenFolder = () => {
-    setShowFolder(false)
-  }
-
   useEffect(() => {
-    animejs({
-      width: resize ? '100%' : '50%',
-      height: resize ? '100%' : '70%',
-      targets: folderRef.current,
-      easing: 'easeInOutExpo',
-      duration: 200,
-    })
+    if (resize !== null) {
+      animejs({
+        width: resize ? '100%' : '30%',
+        height: resize ? '100%' : '65%',
+        targets: folderRef.current,
+        easing: 'easeInOutQuad',
+        duration: 200,
+      })
+    }
   }, [resize])
 
-
-  return (showForder) && (
+  return (
     <div ref={folderRef} className={style.folder} >
       <div className={style.header}>
         <div className={style.containerBtn}>
 
-          <FolderButton onClick={handlerHiddenFolder} icon="/icons/Close.svg" />
-          <FolderButton onClick={handlerHiddenFolder} icon="/icons/Minimize.svg" />
+          <FolderButton onClick={onclick} icon="/icons/Close.svg" />
+          <FolderButton onClick={onclick} icon="/icons/Minimize.svg" />
           <FolderButton onClick={handlerResize} icon="/icons/Zoom.svg" />
 
         </div>

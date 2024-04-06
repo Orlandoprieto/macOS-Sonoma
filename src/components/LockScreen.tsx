@@ -24,9 +24,11 @@ export default function LockScreen({ unlock }: { unlock: (param: boolean) => voi
   }
 
   useEffect(() => {
-    setUsers(getUsers())
-    setUserCurrent(users[0])
-  }, [])
+    const users = getUsers();
+    setUsers(users);
+    setUserCurrent(users[0]);
+  }, []);
+
 
   return (
     <div className={style.container}>
@@ -39,7 +41,7 @@ export default function LockScreen({ unlock }: { unlock: (param: boolean) => voi
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <div
             className={style.containerUser}
-            onMouseEnter={() => setShowUsers(true)}
+            onMouseEnter={() => setShowUsers(users.length > 1)}
             onMouseLeave={() => setShowUsers(false)}
           >
             {users.map((user, index) => {

@@ -2,11 +2,15 @@
     display: flex;
     max-width: 100vw;
     max-height: 100vh;  
+    min-width: 380px;
     flex-direction: column;
     border-radius: 20px;
     position: absolute;
     align-self: center;
     justify-self: center;
+    width: 30%;
+    height: 65%;
+    z-index: 20;
 }
 
 .header{
