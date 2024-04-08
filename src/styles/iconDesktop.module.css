@@ -1,0 +1,15 @@
+
+
+.containerIcon{
+    display: flex;
+    height: 60%;
+    justify-content: center;
+    align-items: center;
+}
+
+.nameIcon{
+    height: 40%;
+    color: white; 
+    text-align: center;
+    overflow: hidden;
+}

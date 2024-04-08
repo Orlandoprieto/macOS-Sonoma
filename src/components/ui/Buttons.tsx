@@ -23,7 +23,6 @@ interface buttonProps extends VariantProps<typeof buttonVariants> {
   icon?: string
   text?: string
   type?: "submit"
-  
 }
 
 export function ButtonAppleSystem({type ,onClick, icon, text, button, separation }: buttonProps) {
