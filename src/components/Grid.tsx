@@ -12,18 +12,20 @@ export default function Grid({ children }: GridProps) {
   const [fillFildsEmpty, setFillFildsEmpty] = useState<React.ReactNode[]>([])
 
   useEffect(() => {
-    const width :any = (window !== undefined) && window.innerWidth;
-    const heigth: any = (window !== undefined) && window.innerHeight
-    const areaWindow = width * heigth
-    const areaIcon = 864
-    const iconsEmpty = (areaWindow / areaIcon) - children.length
-    const emptyDivs = [...children];
+    if (typeof window !== null) {
+      const width = window.innerWidth;
+      const heigth = window.innerHeight
+      const areaWindow = width * heigth
+      const areaIcon = 864
+      const iconsEmpty = (areaWindow / areaIcon) - children.length
+      const emptyDivs = [...children];
 
-    for (let i = 0; i < iconsEmpty; i++) {
-      emptyDivs.push(<div className="iconDesktop" key={i}></div>);
+      for (let i = 0; i < iconsEmpty; i++) {
+        emptyDivs.push(<div className="iconDesktop" key={i}></div>);
+      }
+      
+      setFillFildsEmpty(emptyDivs)
     }
-
-    setFillFildsEmpty(emptyDivs)
 
     if (gridRef.current) {
       const swappable = new Swappable(gridRef.current, {
