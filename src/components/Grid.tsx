@@ -12,11 +12,11 @@ export default function Grid({ children }: GridProps) {
   const [fillFildsEmpty, setFillFildsEmpty] = useState<React.ReactNode[]>([])
 
   useEffect(() => {
-    const width = window.innerWidth;
-    const heigth = window.innerHeight - 973 - children.length;
+    const width :any = (window !== undefined) && window.innerWidth;
+    const heigth: any = (window !== undefined) && window.innerHeight
     const areaWindow = width * heigth
     const areaIcon = 864
-    const iconsEmpty = areaWindow / areaIcon
+    const iconsEmpty = (areaWindow / areaIcon) - children.length
     const emptyDivs = [...children];
 
     for (let i = 0; i < iconsEmpty; i++) {
