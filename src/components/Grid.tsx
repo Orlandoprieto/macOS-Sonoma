@@ -12,7 +12,7 @@ export default function Grid({ children }: GridProps) {
   const [fillFildsEmpty, setFillFildsEmpty] = useState<React.ReactNode[]>([])
 
   useEffect(() => {
-    if (typeof window !== null) {
+    if (typeof window !== undefined) {
       const width = window.innerWidth;
       const heigth = window.innerHeight
       const areaWindow = width * heigth
@@ -23,7 +23,7 @@ export default function Grid({ children }: GridProps) {
       for (let i = 0; i < iconsEmpty; i++) {
         emptyDivs.push(<div className="iconDesktop" key={i}></div>);
       }
-      
+
       setFillFildsEmpty(emptyDivs)
     }
 
