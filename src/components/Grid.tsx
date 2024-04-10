@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useWindowSize } from "react-use"
-import dragula from "react-dragula"
+import dragula from "../../lib/dragula-master"
 
 interface GridProps {
   children: React.ReactNode[]
@@ -30,7 +30,7 @@ export default function Grid({ children }: GridProps) {
     if (!gridRef.current) return
 
     dragula([gridRef.current], {
-      invalid: (element) => {
+      invalid: (element: { classList: { contains: (arg0: string) => any; }; }) => {
         if (!element) return false
         return element.classList.contains("no--draggable")
       },
