@@ -1,46 +1,46 @@
 'use client'
 
-import { Plugins, Swappable } from "@shopify/draggable";
-import { use, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useWindowSize } from "react-use"
+import dragula from "../../lib/dragula/"
 
 interface GridProps {
   children: React.ReactNode[]
 }
 
 export default function Grid({ children }: GridProps) {
+  const windowSize = useWindowSize()
   const gridRef = useRef(null)
   const [fillFildsEmpty, setFillFildsEmpty] = useState<React.ReactNode[]>([])
 
   useEffect(() => {
-    if (typeof window !== undefined) {
-      const width = window.innerWidth;
-      const heigth = window.innerHeight
-      const areaWindow = width * heigth
-      const areaIcon = 864
-      const iconsEmpty = (areaWindow / areaIcon) - children.length
-      const emptyDivs = [...children];
+    const width = windowSize.width;
+    const heigth = windowSize.height - (30 - 77) //<--- altura de pantalla - padding aplicado en Desktop.tsx;
+    const areaWindow = width * heigth;
+    const areaIcon = 8640;
+    const iconsEmpty = (areaWindow / areaIcon) - children.length;
+    const emptyDivs = [...children];
 
-      for (let i = 0; i < iconsEmpty; i++) {
-        emptyDivs.push(<div className="iconDesktop" key={i}></div>);
-      }
-
-      setFillFildsEmpty(emptyDivs)
+    for (let i = 0; i < iconsEmpty; i++) {
+      emptyDivs.push(<div className="iconDesktop no--draggable yes--drop" key={i}></div>);
     }
 
-    if (gridRef.current) {
-      const swappable = new Swappable(gridRef.current, {
-        draggable: '.iconDesktop',
-        mirror: {
-          appendTo: gridRef.current,
-          constrainDimensions: true,
-        },
-        plugins: [Plugins.ResizeMirror],
-      });
+    setFillFildsEmpty(emptyDivs)
 
-      return () => {
-        swappable.destroy();
-      };
-    }
+    if (!gridRef.current) return
+
+    dragula([gridRef.current], {
+      invalid: (element: { classList: { contains: (arg0: string) => any; }; }) => {
+        if (!element) return false
+        return element.classList.contains("no--draggable")
+      },
+    })
+    .on("drag", (element: { classList: { add: (arg0: string) => void; }; }) => {
+      element.classList.add("addOpacity")
+    })
+    .on("dragend", (element: { classList: { remove: (arg0: string) => void; }; }) => {
+      element.classList.remove("addOpacity")
+    })
   }, []);
 
 

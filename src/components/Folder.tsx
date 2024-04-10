@@ -1,7 +1,6 @@
 'use client'
 
 import style from "@/styles/folder.module.css"
-import { buttonFolder } from "../../utils/const"
 import { FolderButton } from "@/components/ui/Buttons"
 import { useState, useRef, useEffect } from "react"
 import animejs from "animejs"

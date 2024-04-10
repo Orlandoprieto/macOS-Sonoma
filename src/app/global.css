@@ -42,3 +42,12 @@ body, main{
     display: flex;
     flex-direction: column;
 }
+
+.gu-mirror{
+    display: none;
+}
+
+.addOpacity{
+    opacity: 0.75;
+}
+
