@@ -20,8 +20,6 @@ export default function Home() {
       {locked
         ? <Desktop />
         : <LockScreen unlock={handlerUnlock} />}
-
-
     </main>
   );
 }

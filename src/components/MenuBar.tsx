@@ -11,9 +11,9 @@ export default function MenuBar() {
           path="/icons/AppleLogo.svg"
         />
         <ul className={style.listNav}>
-          {navApple.map(nav => {
+          {navApple.map((nav, index) => {
             return (
-              <li>{nav}</li>
+              <li key={`listnav ${index}`}>{nav}</li>
             )
           })}
         </ul>
@@ -21,9 +21,9 @@ export default function MenuBar() {
 
       <nav className={style.containerRigth}>
         <ul className={style.iconBar}>
-          {iconsBar.map(icon => {
+          {iconsBar.map((icon, index) => {
             return (
-              <li>
+              <li key={`iconBar ${index}`}>
                 <IconAppleSystem
                   width={18}
                   path={icon}

@@ -1,7 +1,3 @@
-
-
-
-
 @media screen and (min-width: 1000px){
     .menuBar {
         padding: 0 15px;
@@ -14,6 +10,17 @@
         width: 100%;
         background-color: rgb(255, 255, 255, 0.2);
         backdrop-filter: blur(10px);
+        animation-name: showMenu;
+        animation-duration: 500ms;
+    }
+
+    @keyframes showMenu {
+        from{
+            top: -30px;
+        }
+        to{
+            top: 0;
+        }
     }
     
     .menuBar > *{
