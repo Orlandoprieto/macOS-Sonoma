@@ -1,4 +1,5 @@
 export default function Video() {
+  
   return <video
     style={{
       display: 'flex',
@@ -8,7 +9,7 @@ export default function Video() {
       objectFit: 'cover',
       zIndex: "-1"
     }}
-    src="/vid/10411422-uhd_3840_2160_30fps.mp4"
+    src="/vid/VID_20171105_190943.mp4"
     autoPlay
     loop
   />
