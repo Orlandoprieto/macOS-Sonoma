@@ -9,7 +9,7 @@ export default function Video() {
       objectFit: 'cover',
       zIndex: "-1"
     }}
-    src="/vid/VID_20171105_190943.mp4"
+    src="/vid/3115738-hd_1920_1080_24fps.mp4"
     autoPlay
     loop
   />
