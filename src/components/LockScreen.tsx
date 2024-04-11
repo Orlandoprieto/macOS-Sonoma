@@ -2,9 +2,9 @@
 
 import style from "@/styles/lockScreen.module.css"
 import { LoginInput } from "./ui/input"
-import Avatar from "./Avatar"
+import { AvatarLockScreen } from "./Avatar"
 import { useEffect, useState, useRef } from "react"
-import { getUsers, User } from "../../utils/storage"
+import { getUsers, userFullData as User } from "../../utils/storage"
 
 export default function LockScreen({ unlock }: { unlock: (param: boolean) => void }) {
   const [showUser, setShowUsers] = useState<boolean>(false)
@@ -13,8 +13,10 @@ export default function LockScreen({ unlock }: { unlock: (param: boolean) => voi
 
   const inputPasswordRef = useRef<HTMLInputElement>(null);
 
-  const changeUser = (user: User) => {
-    setUserCurrent({ ...user })
+  const changeUser = (nameAcount: string) => {
+    setUserCurrent(
+      users.find(user => user.nameAcount == nameAcount)
+    )
   }
 
   const handlerLogin = () => {
@@ -46,13 +48,13 @@ export default function LockScreen({ unlock }: { unlock: (param: boolean) => voi
           >
             {users.map((user, index) => {
               return (
-                <Avatar
-                  handlerChangeUser={changeUser}
+                <AvatarLockScreen
+                  typeOfuser={user.typeOfuser}
+                  handlerClick={changeUser}
                   key={`${user} ${index}`}
                   deploy={showUser}
                   index={index}
                   fullName={user.fullName}
-                  password={user.password}
                 />
               )
             })}

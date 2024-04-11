@@ -1,40 +1,49 @@
-export interface User {
-   fullName: string
-   password: string
+
+export interface InfoUser {
+   typeOfuser: 'Administrador'
+   fullName: string,
+   avatar?: string
+   nameAcount?: string
    mail?: string
+}
+
+export interface CredentialsUser {
+   password: string
    nameAcount?: string
 }
+
+export interface userFullData extends InfoUser, CredentialsUser{}
 
 export const getUsers = () => {
    let json: string | null = localStorage.getItem("users")
 
    if (json == null) {
-      const defaultUser: User = {
+      const defaultUser: userFullData = {
+         typeOfuser: "Administrador",
          fullName: "User",
          password: "123",
-         mail: "user19@gmail.com",
-         nameAcount: "User"
+         nameAcount: "User",
+         mail: "orlandoprieto19@gmail.com"
       };
 
       localStorage.setItem("users", JSON.stringify([defaultUser]));
       return [defaultUser];
    }
 
-   return JSON.parse(json) as User[];
+   return JSON.parse(json) as userFullData[];
 }
 
 
 export const saveUser = ({
    fullName,
    password,
-   mail,
-   nameAcount
-}: User) => {
-   const users: User[] = getUsers()
+   nameAcount,
+   mail
+}: userFullData) => {
+   const users: userFullData[] = getUsers()
 
-   const newUser: User = { fullName, password, mail, nameAcount }
+   const newUser: userFullData = { typeOfuser: 'Administrador', fullName, mail, password, nameAcount }
    users.push(newUser)
-   console.log(users)
    localStorage.setItem("users", JSON.stringify(users))
 }
 

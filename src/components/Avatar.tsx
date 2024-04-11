@@ -1,28 +1,39 @@
 'use client'
 
-import { User } from "../../utils/storage"
+import { InfoUser } from "../../utils/storage"
 import { useEffect, useState, useRef } from "react"
 import style from "@/styles/avatar.module.css"
 import { AvatarIcon } from "@/components/icons"
 import animejs from "animejs"
 
+export function AvatarListUsers({fullName, typeOfuser}: InfoUser) {
+  return (
+    <div className={style.containerAvatarListUsers}>
+      <div className={style.containerAvatar}>
+        <AvatarIcon width={45} />
+      </div>
 
-interface AvatarProps extends User {
+      <div className={style.InfoUser}>
+        <span>{fullName}</span>
+        <span>{typeOfuser}</span>
+      </div>
+    </div>
+  )
+}
+
+interface AvatarProps extends InfoUser {
   pathImg?: string
   deploy: boolean
   index: number
-  handlerChangeUser: ({ fullName, password }: User) => void
+  handlerClick: (nameAcount: string) => void
 }
 
-export default function Avatar({
+export function AvatarLockScreen({
   index,
   deploy,
-  pathImg,
   fullName,
-  password,
   nameAcount,
-  mail,
-  handlerChangeUser
+  handlerClick
 }: AvatarProps) {
   const users = useRef(null)
   const name = useRef(null)
@@ -50,7 +61,10 @@ export default function Avatar({
     <div
       ref={users}
       className={style.base}
-      onClick={() => handlerChangeUser({ fullName, password, mail, nameAcount })}
+      onClick={() => {
+        if (!nameAcount) return
+        handlerClick(nameAcount)
+      }}
     >
       <div
         className={style.containerAvatar}

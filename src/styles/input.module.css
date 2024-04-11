@@ -25,33 +25,33 @@
 
 }
 
-.password::placeholder{
+.password::placeholder {
     font-size: 15px;
     color: rgb(255, 255, 255, 0.4);
 }
 
 .textFields {
-    width: 80%;
+    width: 100%;
     height: 35px;
     margin: 12px 0;
     display: flex;
 }
 
-.textFields>*{
+.textFields>* {
     display: flex;
     align-items: center;
     font-family: 'SF Pro', sans-serif;
     font-style: "regular";
 }
 
-.textFields > :first-child {
+.textFields> :first-child {
     padding: 0 10px;
     justify-content: flex-end;
-    width: 40%;
+    width: 25%;
 }
 
-.textFields>:last-child { 
-    width: 60%;
+.textFields>:last-child {
+    width: 75%;
     padding: 0 8px;
     border: none;
     outline: none;
@@ -59,9 +59,6 @@
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1)
 }
 
-.textFields>:last-child:focus { 
+.textFields>:last-child:focus {
     border: 4px solid rgb(0, 122, 255, 0.5);
 }
-
-
-

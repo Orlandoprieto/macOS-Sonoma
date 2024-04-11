@@ -33,6 +33,5 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 80%;
-    margin: 12px 0;
+    width: 100%;
 }

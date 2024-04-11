@@ -1,0 +1,22 @@
+.DialogContent {
+    padding: 20px;
+    flex-direction: column;
+    position: absolute;
+    z-index: 9999;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    width: 600px;
+    height: 400px;
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.overlay {
+    background-color: black;
+    opacity: 0.4;
+    z-index: 9998;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
