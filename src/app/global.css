@@ -20,7 +20,7 @@
 }
 
 body, main{
-    background-image: url("/Desktop Wallpaper.svg");
+    background-image: url("/DesktopWallpaper.png");
     background-size: cover;
     display: flex;
     position: relative;

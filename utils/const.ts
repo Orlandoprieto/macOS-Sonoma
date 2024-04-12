@@ -13,7 +13,7 @@ export const iconsBar = [
     "/icons/settingIcon.svg",
     "/icons/userIcon.svg",
     "/icons/wifiIcon.svg"
-] 
+]
 
 export const buttonFolder = [
     "/icons/Close.svg",
@@ -37,3 +37,12 @@ export const iconsDock = [
     "/icons/iconDock/App Icon=Safari.svg",
     "/icons/iconDock/App Icon=Numbers.svg",
 ]
+
+
+export const avatars = [
+    "avatars/sticker_3.webp",
+    "avatars/sticker_4.webp",
+    "avatars/sticker_7.webp",
+    "avatars/sticker_10.webp",
+]
+

@@ -1,12 +1,13 @@
 "use client"
 
-import style from "@/styles/form.module.css"
-import { TextFields } from "@/components/ui/input"
-import { ButtonAppleSystem } from "@/components/ui/Buttons"
-import { useForm, FormProvider, SubmitHandler, FieldValues } from "react-hook-form"
-import { saveUser, userFullData } from "../../utils/storage"
-import Modal from "./Modal"
-import { Close } from '@radix-ui/react-dialog'
+import style from "@/styles/form.module.css";
+import { TextFields } from "@/components/ui/input";
+import { ButtonAppleSystem } from "@/components/ui/Buttons";
+import { useForm, FormProvider} from "react-hook-form";
+import { saveUser, userFullData } from "../../utils/storage";
+import Modal from "./Modal";
+import { Close } from '@radix-ui/react-dialog';
+import { avatars } from "../../utils/const";
 
 interface FormNewUserProps {
   openModalButton: React.ReactNode
@@ -17,7 +18,9 @@ export default function FormNewUser({ openModalButton }: FormNewUserProps) {
 
   const createUser = () => {
     const data = methods.getValues()
-    saveUser(data)
+    const avatar = avatars[Math.floor(Math.random() * avatars.length)]
+
+    saveUser({...data, avatar})
   };
 
   return (

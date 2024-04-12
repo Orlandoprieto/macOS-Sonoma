@@ -8,7 +8,7 @@
         display: flex;
         height: 30px;
         width: 100%;
-        background-color: rgb(255, 255, 255, 0.2);
+        background-color: rgb(255, 255, 255, 0.4);
         backdrop-filter: blur(10px);
         animation-name: showMenu;
         animation-duration: 500ms;
